@@ -1,4 +1,5 @@
 {% extends "blog/base.html" %}
+{% load static %}
 
 {% block content %}
 
@@ -40,6 +41,8 @@
 
         </div>
         <h2 class="article-title" align='justify'>{{ object.title }}</h2>
+        <h3 class="article-title" align='justify'>{{ object.subtitle }}</h3>
+        <img src="{{object.image.url}}" alt="Smiley face" width="250" height="250">
         <p class="article-content">
             {% autoescape off %}
             {{ object.content }}

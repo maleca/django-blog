@@ -57,7 +57,7 @@ class PostCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, UpdateView):
     model = Post
-    fields = ['title', 'content']
+    fields = ['title', 'subtitle', 'content', 'image']
     success_message = "Post updated succesfully!"
 
     def form_valid(self, form):
@@ -85,3 +85,4 @@ class PostDeleteView(LoginRequiredMixin, SuccessMessageMixin, UserPassesTestMixi
 
 def about(request):
     return render(request, 'blog/about.html', context={})
+
